@@ -1,0 +1,18 @@
+body {
+    min-height: 4096px; /* Taille minimale du body */
+    position: relative; /* Pour référencer le footer */
+}
+
+footer {
+    position: fixed; /* Position fixe en bas de la fenêtre */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Prend toute la largeur de la page */
+    height: 50px; /* Hauteur du footer */
+    background-color: #ccc; /* Couleur de fond initiale */
+}
+
+/* Animation de transition pour la couleur de fond */
+footer {
+    transition: background-color 0.3s ease;
+}
