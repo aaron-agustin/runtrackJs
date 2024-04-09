@@ -18,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="https://laplateforme.io/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
@@ -34,16 +34,18 @@
         </div>
       </nav>
     <div class="row">
-        <div class="col-2"><img src="/jour06/Image/butterfly.jpg" class="img-fluid" alt=""> <br> <h1>Un Papillon </h1><br> <p>Un papillon c'est un peu comme une chenille,mais avec des ailes. Ne pas ingerer.</p></div>
+        <div class="col-2"><img src="/jour06/Image/butterfly.jpg" class="img-fluid" alt=""> <br> <h1>Un Papillon </h1><br> <p>Un papillon c'est un peu comme une chenille,mais avec des ailes. Ne pas ingerer.</p>  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#achatPapillonModal">Acheter un Papillon</button>
+        </div>
         <div class="col-8">
-            <h1>Bonjour, monde! </h1>
+            <h1 id="jumbotronText">Bonjour, monde! </h1>
             <br>
             <p>il existe plusieurs vision du terme: le monde est la matière l'espace et les phénomènes qui nous sont accessibles par les sens, l'experience ou la raison. Le sens plus courant désigne notre planète, la Terre avec ses habitants et son environnement plus ou moins naturel. </p>
             <hr>
             <br>
             <p>le sens étendu désigne l'univers dans son ensemble.</p>
             <br>
-            <button type="button" class="btn btn-danger">Rebooter le monde</button>
+            <!-- Bouton de reboot avec citation aléatoire -->
+            <button type="button" class="btn btn-danger" onclick="changeJumbotronText()">Rebooter le monde</button>
         </div>
         <div class="col-2">
             <div class="col1">Limbes</div>
@@ -88,6 +90,42 @@
            </form>
        </div>
    </div>
-   <script src="js/bootstrap.bundle.min.js"></script> 
+
+   <!-- Modale d'achat de papillon -->
+   <div class="modal fade" id="achatPapillonModal" tabindex="-1" aria-labelledby="achatPapillonModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="achatPapillonModalLabel">Achat de Papillon</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                   Confirmez-vous l'achat d'un papillon ?
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                   <button type="button" class="btn btn-primary">Confirmer</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script>
+       function changeJumbotronText() {
+           // Tableau de citations de Blade Runner
+           var citations = [
+               "J'ai vu de bien des façons de tuer. J'ai vu des choses qu'on ne croirait pas.",
+               "Tous ces moments se perdront dans l'oubli comme des larmes dans la pluie.",
+               "Il est difficile de voir ces moments se perdre dans l'oubli."
+           ];
+
+           // Sélection aléatoire d'une citation
+           var citationAleatoire = citations[Math.floor(Math.random() * citations.length)];
+
+           // Modification du texte du Jumbotron
+           document.getElementById("jumbotronText").innerText = citationAleatoire;
+       }
+   </script>
 </body>
 </html>
